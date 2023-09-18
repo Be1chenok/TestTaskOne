@@ -50,7 +50,7 @@ func Run() {
 		}
 	}()
 
-	ticker := time.NewTicker(time.Second)
+	ticker := time.NewTicker(time.Minute)
 	defer ticker.Stop()
 
 	go func() {
@@ -84,6 +84,6 @@ func Run() {
 	}
 
 	if err = db.Close(); err != nil {
-		log.Fatalf("postresDB.Close(): %v", err)
+		log.Fatalf("db.Close(): %v", err)
 	}
 }
